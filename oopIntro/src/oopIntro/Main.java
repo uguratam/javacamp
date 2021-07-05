@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Product product1 = new Product(1,"Lenovo V14",15000,"16 GB Ram",10,13500); // referans oluþturma, intance
+		Product product1 = new Product(1,"Lenovo V14",15000,"16 GB Ram",10); // referans oluþturma, intance
 		
 		Product product2 = new Product(); // referans oluþturma, intance
 		product2.setId(2);
@@ -15,7 +15,20 @@ public class Main {
 		
 		System.out.println(product2.getUnitPriceAfterDiscount());
 		
+		Category category1 = new Category();
+		category1.id = 1;
+		category1.name = "Ýçecek";
+		
+		
+		Category category2 = new Category();
+		category2.id = 2;
+		category2.name = "Yiyecek";
+		
+		
+		System.out.println(category1.name);
+		System.out.println(category2.name);
 		
 	}
 
 }
+ 
