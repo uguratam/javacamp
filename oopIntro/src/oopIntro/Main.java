@@ -16,17 +16,18 @@ public class Main {
 		System.out.println(product2.getUnitPriceAfterDiscount());
 		
 		Category category1 = new Category();
-		category1.id = 1;
-		category1.name = "Ýçecek";
+		category1.setId(1);
+		category1.setName("Ýçecek"); 
 		
 		
 		Category category2 = new Category();
-		category2.id = 2;
-		category2.name = "Yiyecek";
+		category2.setId(2);
+		category2.setName("Yiyecek"); 
 		
 		
-		System.out.println(category1.name);
-		System.out.println(category2.name);
+		
+		System.out.println(category1.getName());
+		System.out.println(category2.getName());
 		
 	}
 
