@@ -10,7 +10,12 @@ public class Main {
 		CustomerManager customerManager = new CustomerManager(loggers);
 		Customer engin = new Customer(1,"Engin","Demiroğ");
 		
+		CustomerManager customerManager2 = new CustomerManager(loggers);
+		Customer ugur = new Customer(2,"Uğur","Atam");
+		
 		customerManager.add(engin);
+		System.out.println("-------\n\n");
+		customerManager.delete(ugur);
 				
 	}
 

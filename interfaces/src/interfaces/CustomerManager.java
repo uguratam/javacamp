@@ -12,19 +12,16 @@ public class CustomerManager {
 
 	public void add(Customer customer) {
 		System.out.println("Müþteri eklendi." + customer.getFirstName());		
-	
-		for(Logger logger : loggers) {
-			logger.log(customer.getFirstName());
-		}
+			
+		Utils.runLoggers(loggers, customer.getFirstName() + " sisteme eklendi.");
 		
 	}
 	
 	
 	public void delete(Customer customer) {
 		System.out.println("Müþteri silindi." + customer.getFirstName());		
-		for(Logger logger : loggers) {
-			logger.log(customer.getFirstName());
-		}
+		
+		Utils.runLoggers(loggers, customer.getLastName() + " silindi !");
 		
 	}
 
