@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import Kodlamaio.northwind.business.abstracts.ProductService;
 import Kodlamaio.northwind.dataAccess.abstracts.ProductDao;
 import Kodlamaio.northwind.entities.concretes.Product;
