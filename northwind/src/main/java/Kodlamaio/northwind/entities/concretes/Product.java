@@ -5,12 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
 
 import lombok.Data;
 
 @Data
 @Entity
+
 @Table(name = "products")
 public class Product {
 	
@@ -19,8 +24,8 @@ public class Product {
 	@Column(name = "product_id")
 	private int id;
 	
-	@Column(name = "category_id")
-	private int categoryId;
+	// @Column(name = "category_id")
+	// private int categoryId;
 	
 	@Column(name = "product_name")
 	private String productName;
@@ -34,81 +39,77 @@ public class Product {
 	@Column(name = "quantity_per_unit")
 	private String quantityPerInit;
 	
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
+	private Category category;
+	
+	
 	public Product() {
-		
 	}
-	
-	
-	public Product(int id, int categoryId, String productName, double unitPrice, int unitsInStock,
-			String quantityPerInit) {
+
+	public Product(int id, String productName, double unitPrice, int unitsInStock, String quantityPerInit,
+			Category category) {
 		super();
 		this.id = id;
-		this.categoryId = categoryId;
 		this.productName = productName;
 		this.unitPrice = unitPrice;
 		this.unitsInStock = unitsInStock;
 		this.quantityPerInit = quantityPerInit;
+		this.category = category;
 	}
-
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-	public int getCategoryId() {
-		return categoryId;
-	}
-
-
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-
 
 	public String getProductName() {
 		return productName;
 	}
 
-
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-
 
 	public double getUnitPrice() {
 		return unitPrice;
 	}
 
-
 	public void setUnitPrice(double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
-
 
 	public int getUnitsInStock() {
 		return unitsInStock;
 	}
 
-
 	public void setUnitsInStock(int unitsInStock) {
 		this.unitsInStock = unitsInStock;
 	}
-
 
 	public String getQuantityPerInit() {
 		return quantityPerInit;
 	}
 
-
 	public void setQuantityPerInit(String quantityPerInit) {
 		this.quantityPerInit = quantityPerInit;
 	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
+	
+	
+	
 	
 
 }
